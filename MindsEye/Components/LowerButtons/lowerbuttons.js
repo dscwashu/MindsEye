@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
- import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
  // Requires Two Props:
  //      1. Title- what tab it will go to
@@ -8,10 +8,16 @@ import React, { Component } from 'react';
 //style={styles.container}
  // Will need to update with click event
  export class LowB extends Component {
+
+    _onPressButton(){
+        alert("nice");
+    }
+
+
      render() {
          return (
-             <View style={styles.container}>
-                 <Text style={styles.title}>{this.props.title}</Text>
+             <View id={this.props.title} style={styles.container}>
+                 <Button style={styles.title} title={this.props.title} color='black' onPress={this._onPressButton}/>
              </View>
          );
      }
@@ -34,7 +40,6 @@ import React, { Component } from 'react';
      },
      title: {
          fontSize: 15,
-         fontWeight: "bold"
-
+         fontWeight: "bold",
      },
    });

@@ -4,22 +4,29 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
+
+
     <View style={styles.container}>
-      <LowB title="Livestream"></LowB>
-      <LowB title="Browse"></LowB>
-      <LowB title="Search"></LowB>
-      <LowB title="Library"></LowB>
-      <LowB title="Settings"></LowB>
+
+      <View style={styles.button}>
+        <LowB title="Livestream"></LowB>
+        <LowB title="Browse"></LowB>
+        <LowB title="Search"></LowB>
+        <LowB title="Library"></LowB>
+        <LowB title="Settings"></LowB>
+      </View>
+
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  button: {
     flex: 1,
     flexDirection: 'row',
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    bottom: '-70%'
   },
 });
