@@ -8,8 +8,12 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 // Will need to update with click event
 export class Podcast extends Component {
+    
     render() {
+       
+       
         return (
+       //Physical Layout
             <View style={styles.container}>
                     <Image
                         style={styles.image}
