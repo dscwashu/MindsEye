@@ -1,6 +1,7 @@
 import React from 'react';
 import { Podcast } from './components/Podcast';
-import { StyleSheet, Text, View } from 'react-native';
+import { LowB } from './components/LowerButtons';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
 
 export default function App() {
   return (
@@ -17,4 +18,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  button: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    bottom: '5%'
+  },
+  scrollPod:{
+    top: '10%'
+  }
 });
