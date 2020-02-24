@@ -11,7 +11,6 @@ export class Podcast extends Component {
     
     render() {
        
-       
         return (
        //Physical Layout
             <View style={styles.container}>
