@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 // Requires Three Props:
 //      1. url: Thumbnail URL
@@ -9,11 +10,11 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 // Will need to update with click event
 export class Podcast extends Component {
     
-    render() {
-       
+    render() {   
         return (
        //Physical Layout
-            <View style={styles.container}>
+            <View style={styles.full} >
+                <TouchableOpacity style={styles.container} onPress={this.props.onPress}>
                     <Image
                         style={styles.image}
                         source={{ uri: this.props.uri }}
@@ -22,6 +23,7 @@ export class Podcast extends Component {
                         <Text style={styles.title}>{this.props.title}</Text>
                         <Text style={styles.author}>{this.props.author}</Text>
                     </View>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -58,6 +60,10 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         fontSize: 16,
         fontWeight: "500"
+    },
+    full: {
+        width: "100%",
+        height: 150
     }
   });
   

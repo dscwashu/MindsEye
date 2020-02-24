@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 
  // Requires Two Props:
  //      1. Title- what tab it will go to
@@ -7,11 +7,22 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 
 //style={styles.container}
  // Will need to update with click event
- export class LowB extends Component {
+ export class LowButtons extends Component {
      render() {
          return (
-             <View id={this.props.title} style={styles.container}>
-                 <Button style={styles.title} title={this.props.title} color='black' onPress={this._onPressButton}/>
+             <View style={styles.container}>
+                 <TouchableOpacity style={styles.title}>
+                    <Text style={styles.text}>Settings</Text>
+                 </TouchableOpacity>
+                 <TouchableOpacity style={styles.title}>
+                    <Text style={styles.text}>Profile</Text>
+                 </TouchableOpacity>
+                 <TouchableOpacity style={styles.title}>
+                    <Text style={styles.text}>Library</Text>
+                 </TouchableOpacity>
+                 <TouchableOpacity style={styles.title}>
+                    <Text style={styles.text}>Favorites</Text>
+                 </TouchableOpacity>
              </View>
          );
      }
@@ -19,9 +30,23 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 
  const styles = StyleSheet.create({
      container: {
-         
+        height: 75,
+        flexDirection: "row",
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
      },
      title: {
-         
+         height: 75,
+        fontSize: 20,
+        flex: 1,
+        textAlign: "center",
+        justifyContent: "center",
+        alignItems: "center",
+        borderWidth: 1
      },
+     text: {
+         fontSize: 20,
+     }
    });
