@@ -13,7 +13,7 @@ import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
          return (
              <View style={styles.container}>
                  <TouchableOpacity onPress={this.props.livestreamOnPress} style={styles.title}>
-                    <Text style={styles.text}>Livestream</Text>
+                    <Text style={styles.text}>Radio</Text>
                  </TouchableOpacity>
                  <TouchableOpacity onPress={this.props.browseOnPress} style={styles.title}>
                     <Text style={styles.text}>Browse</Text>
