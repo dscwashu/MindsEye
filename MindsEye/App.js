@@ -9,10 +9,68 @@ import { LowButtons } from './src/components/LowerButtons';
 
 import { Audio } from 'expo-av';
 
+import { Input } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 // import { Podcasts } from './src/pages/PodcastPage';
 // import { TestScreen } from './src/pages/TestScreen';
 
+
+
+function LoginScreen({ navigation }) {
+  state = { 
+		name: 'Login'
+	};
+
+  onNameChange = (text) => {
+		state.name = text;
+	}
+  
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'top', marginBottom:10 }}>
+        <Text style={{fontSize:40, marginTop:50, marginBottom:20}}>{state.name}</Text>
+        <Input 
+					inputStyle={{ 		
+						color: '#000',
+            fontSize: 25, 
+          }} 
+          containerStyle={{marginBottom:20}}
+          placeholder="Username"
+          leftIcon={
+            <Icon
+            style={{marginRight: 10}}
+              name='user'
+              size={24}
+              color='black'
+            />
+          }
+          onChangeText={onNameChange}
+				/>
+        <Input 
+					inputStyle={{ 		
+						color: '#000',
+						fontSize: 25, 
+          }} 
+          containerStyle={{marginBottom:20}}
+          placeholder="Password"
+          leftIcon={
+            <Icon
+            style={{marginRight: 10}}
+              name='lock'
+              size={24}
+              color='black'
+            />
+          }
+          onChangeText={onNameChange}
+          secureTextEntry={true}
+				/>
+        <Button
+        title="Enter"
+        onPress={() => navigation.navigate('Home')}
+      />
+    </View>
+  );
+}
 
 function HomeScreen({ navigation }) {
   return (
@@ -121,6 +179,7 @@ const Stack = createStackNavigator();
 function PageStack() {
   return (
     <Stack.Navigator>
+      <Stack.Screen name=" " component={ LoginScreen } />
       <Stack.Screen name="Home" component={ HomeScreen } />
       <Stack.Screen name="Settings" component={ SettingsScreen } />
       <Stack.Screen name="Podcast" component={ PodcastScreen } />
