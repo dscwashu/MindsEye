@@ -7,21 +7,25 @@ import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 
 //style={styles.container}
  // Will need to update with click event
+
  export class LowButtons extends Component {
      render() {
          return (
              <View style={styles.container}>
-                 <TouchableOpacity style={styles.title}>
-                    <Text style={styles.text}>Settings</Text>
+                 <TouchableOpacity onPress={this.props.livestreamOnPress} style={styles.title}>
+                    <Text style={styles.text}>Livestream</Text>
                  </TouchableOpacity>
-                 <TouchableOpacity style={styles.title}>
-                    <Text style={styles.text}>Profile</Text>
+                 <TouchableOpacity onPress={this.props.browseOnPress} style={styles.title}>
+                    <Text style={styles.text}>Browse</Text>
                  </TouchableOpacity>
-                 <TouchableOpacity style={styles.title}>
+                 <TouchableOpacity onPress={this.props.searchOnPress} style={styles.title}>
+                    <Text style={styles.text}>Search</Text>
+                 </TouchableOpacity>
+                 <TouchableOpacity onPress={this.props.libraryOnPress} style={styles.title}>
                     <Text style={styles.text}>Library</Text>
                  </TouchableOpacity>
-                 <TouchableOpacity style={styles.title}>
-                    <Text style={styles.text}>Favorites</Text>
+                 <TouchableOpacity onPress={this.props.settingsOnPress} style={styles.title}>
+                    <Text style={styles.text}>Settings</Text>
                  </TouchableOpacity>
              </View>
          );
@@ -49,4 +53,4 @@ import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
      text: {
          fontSize: 20,
      }
-   });
+});
