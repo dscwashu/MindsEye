@@ -12,19 +12,17 @@ import '../global/constants';
 export class LibraryPage extends Component {
   render(){
 
-    var podcastElements = [];
+    var tabElements = [];
 
-    global.Podcasts.titles.map((a,index) => {
+    this.props.Object.map((a,index) => {
       if(index != 0){
-        podcastElements.push(
-            <Podcast key={index} onPress={() => selectPodcast(index, this.props.navigation)}
-                title={global.Podcasts.titles[index]}
-                author={global.Podcasts.authors[index]}
-                uri={global.Podcasts.uris[index]}/>
+        tabElements.push(
+            
         );
       }
     });
 
+    
     function selectPodcast(index, navigation){
       console.log(index);
       if(index == 0){
@@ -47,7 +45,7 @@ export class LibraryPage extends Component {
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <ScrollView style={styles.scroll}>
 
-            {podcastElements}
+            {tabElements}
 
           </ScrollView>
           <View>
