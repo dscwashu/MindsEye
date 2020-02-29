@@ -9,7 +9,7 @@ import '../global/constants';
 
 // For podcast Listening
 
-export class BrowsePage extends Component {
+export class LibraryPage extends Component {
   render(){
 
     var podcastElements = [];

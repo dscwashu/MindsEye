@@ -14,6 +14,38 @@ global.Podcasts = {
           "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTv67s0HzDE5wsomacfTdoAWdQmvHApDmSoq8Miz6JFu324h3sY"
     ]
 }
+
+global.Library = {
+    favorites: {
+        titles: [],
+        authors: [],
+        urls: [],
+        uris: []
+    },
+    onlineOnly: {
+        comicBooks: {
+            titles: [],
+            authors: [],
+            urls: [],
+            uris: []
+        },
+        sportsAngle: {
+            titles: [],
+            authors: [],
+            urls: [],
+            uris: []
+        }
+    },
+    bookWork: {
+        titles: [],
+        authors: [],
+        urls: [],
+        uris: []
+    }
+
+    
+}
+
 global.isPlaying = false;
 global.midIcon = "play-circle";
 global.podcastIndex = 0;

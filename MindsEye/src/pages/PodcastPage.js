@@ -113,7 +113,7 @@ export class PodcastPage extends Component {
                         source={{ uri: this.props.uri }}
                     />
                 <View style={{flexDirection: "row", justifyContent: "center", alignItems: "center", height: "20%", width: "100%"}}>
-                    <TouchableOpacity onPress={forward10}>
+                    <TouchableOpacity onPress={rewind10}>
                         <Icon
                             accessible={true} accessibilityLabel={"Rewind 10 Seconds Button"} accessibilityHint={"Click to Rewind 10 seconds"}
                             style={{marginRight: 30}}
@@ -129,7 +129,7 @@ export class PodcastPage extends Component {
                             size={80}
                         />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={rewind10}>
+                    <TouchableOpacity onPress={forward10}>
                         <Icon
                             accessible={true} accessibilityLabel={"Fast Forward 10 Seconds Button"} accessibilityHint={"Click to Fast Forward 10 seconds"}
                             style={{marginLeft: 30}}
