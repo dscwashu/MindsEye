@@ -1,0 +1,1 @@
+global.podcastIndex = 0;

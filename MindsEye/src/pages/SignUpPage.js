@@ -5,10 +5,10 @@ import { Input } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-export class LoginPage extends Component {
+export class SignUpPage extends Component {
     render() {   
         state = { 
-            name: 'Login'
+            name: 'Sign Up'
         };
         onNameChange = (text) => {
             state.name = text;
@@ -52,7 +52,7 @@ export class LoginPage extends Component {
                 secureTextEntry={true}
                 />
                 <View style={{flexDirection: "row", justifyContent: "space-around", width: "80%", height: 75}}>
-                    <TouchableOpacity style={{width: 150, height: 75, alignItems: "center", justifyContent: "center", backgroundColor: "lightblue", borderColor: "gray", borderWidth: 0.5}} onPress={() => this.props.navigation.navigate('Browse')}>
+                    <TouchableOpacity style={{width: 150, height: 75, alignItems: "center", justifyContent: "center", backgroundColor: "lightblue", borderColor: "gray", borderWidth: 0.5}} onPress={() => this.props.navigation.navigate('Login')}>
                         <Text style={{fontSize: 36, }}>Log In</Text>
                     </TouchableOpacity>
 

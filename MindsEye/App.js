@@ -6,9 +6,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { LoginPage } from './src/pages/LoginPage';
+import { SignUpPage } from './src/pages/SignUpPage';
 import { BrowsePage } from './src/pages/BrowsePage';
+import { PodcastPage } from './src/pages/PodcastPage';
 
-import { Audio } from 'expo-av';
+
 
 function LoginScreen({ navigation }) {
   return (
@@ -23,11 +25,10 @@ function BrowseScreen({ navigation }) {
   );
 }
 
-function LivestreamScreen({ navigation }) {
+function PodcastScreen({ navigation, route }) {
+  const { url, uri, title, author } = route.params;
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Livestream</Text>
-    </View>
+    <PodcastPage navigation={navigation} url={url} uri={uri} title={title} author={author}></PodcastPage>
   );
 }
 
@@ -45,41 +46,17 @@ function LibraryScreen({ navigation }) {
 function SettingsScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      
+        <Text>Settings</Text>
     </View>
   );
 }
 
-
-// Podcast Screen
-function PodcastScreen({ navigation, route }) {
-  const { url } = route.params; 
-
-  async function playPodcast(){
-    console.log(url);
-    try {
-      const playbackObject = await Audio.Sound.createAsync(
-        { uri: url},
-        { shouldPlay: true }
-      );
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
+// Profile Screen
+function SignUpScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button
-        title="Play"
-        
-        onPress={playPodcast}
-      />
-      <Button title="Go back" onPress={() => {
-        navigation.goBack()}} />
-    </View>
+    <SignUpPage navigation={navigation}></SignUpPage>
   );
 }
-
 
 const Stack = createStackNavigator();
 
@@ -88,10 +65,10 @@ function PageStack() {
     <Stack.Navigator>
       {/* Login and Signup */}
       <Stack.Screen name="Login" component={ LoginScreen } />
+      <Stack.Screen name="SignUp" component={ SignUpScreen } />
 
       {/* Lower Buttons */}
       <Stack.Screen name="Settings" component={ SettingsScreen } />
-      <Stack.Screen name="Livestream" component={ LivestreamScreen } />
       <Stack.Screen name="Browse" component={ BrowseScreen } />
       <Stack.Screen name="Library" component={ LibraryScreen } />
       <Stack.Screen name="Podcast" component={ PodcastScreen } />
@@ -106,6 +83,6 @@ export default function App() {
       <NavigationContainer>
         <PageStack />
       </NavigationContainer>
-    //</ErrorBoundary> 
+    // </ErrorBoundary> 
   );
 }

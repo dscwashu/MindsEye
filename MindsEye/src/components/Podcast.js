@@ -21,7 +21,7 @@ export class Podcast extends Component {
                     />
                     <View style={styles.info}>
                         <Text style={styles.title}>{this.props.title}</Text>
-                        <Text style={styles.author}>{this.props.author}</Text>
+                        {/* <Text style={styles.author}>{this.props.author}</Text> */}
                     </View>
                 </TouchableOpacity>
             </View>
@@ -34,12 +34,12 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         width: '100%',
         height: 150,
-        backgroundColor: 'gray',
+        backgroundColor: '#F0F0F0',
         alignItems: 'center',
         justifyContent: 'flex-start',
         borderRadius: 1,
         borderWidth: 2,
-        borderColor: "black"
+        borderColor: "gray"
     },
     image: {
         marginLeft: 20,
@@ -53,12 +53,12 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
     title: {
-        fontSize: 30,
+        fontSize: 24,
         fontWeight: "bold"
     },
     author: {
         marginLeft: 10,
-        fontSize: 16,
+        fontSize: 12,
         fontWeight: "500"
     },
     full: {
