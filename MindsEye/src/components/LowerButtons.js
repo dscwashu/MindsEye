@@ -12,19 +12,24 @@ import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
      render() {
          return (
              <View style={styles.container}>
-                 <TouchableOpacity onPress={this.props.livestreamOnPress} style={styles.title}>
+                 <TouchableOpacity onPress={this.props.livestreamOnPress} style={styles.title}
+                  accessible={true} accessibilityLabel={"Browse"} accessibilityHint={"Navigate to Browse"}>
                     <Text style={styles.text}>Browse</Text>
                  </TouchableOpacity>
-                 <TouchableOpacity onPress={this.props.browseOnPress} style={styles.title}>
+                 <TouchableOpacity onPress={this.props.browseOnPress} style={styles.title}
+                  accessible={true} accessibilityLabel={"Radio"} accessibilityHint={"Navigate to Radio"}>
                     <Text style={styles.text}>Radio</Text>
                  </TouchableOpacity>
-                 <TouchableOpacity onPress={this.props.searchOnPress} style={styles.title}>
+                 <TouchableOpacity onPress={this.props.searchOnPress} style={styles.title}
+                 accessible={true} accessibilityLabel={"Play"} accessibilityHint={"Navigate to Play"}>
                     <Text style={styles.text}>Play</Text>
                  </TouchableOpacity>
-                 <TouchableOpacity onPress={this.props.libraryOnPress} style={styles.title}>
+                 <TouchableOpacity onPress={this.props.libraryOnPress} style={styles.title}
+                 accessible={true} accessibilityLabel={"Library"} accessibilityHint={"Navigate to Library"}>
                     <Text style={styles.text}>Library</Text>
                  </TouchableOpacity>
-                 <TouchableOpacity onPress={this.props.settingsOnPress} style={styles.title}>
+                 <TouchableOpacity onPress={this.props.settingsOnPress} style={styles.title}
+                 accessible={true} accessibilityLabel={"Settings"} accessibilityHint={"Navigate to Settings"}>
                     <Text style={styles.text}>Settings</Text>
                  </TouchableOpacity>
              </View>

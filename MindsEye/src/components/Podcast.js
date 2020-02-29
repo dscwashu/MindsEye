@@ -13,8 +13,9 @@ export class Podcast extends Component {
     render() {   
         return (
        //Physical Layout
-            <View style={styles.full} >
-                <TouchableOpacity style={styles.container} onPress={this.props.onPress}>
+            <View style={styles.full}>
+                <TouchableOpacity style={styles.container} onPress={this.props.onPress}
+                accessible={true} accessibilityLabel={this.props.title} accessibilityHint={"Select Podcast"}>
                     <Image
                         style={styles.image}
                         source={{ uri: this.props.uri }}

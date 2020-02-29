@@ -28,7 +28,8 @@ function BrowseScreen({ navigation }) {
 function PodcastScreen({ navigation, route }) {
   const { url, uri, title, author } = route.params;
   return (
-    <PodcastPage navigation={navigation} url={url} uri={uri} title={title} author={author}></PodcastPage>
+    <PodcastPage navigation={navigation} url={url} uri={uri} title={title} author={author}> 
+    </PodcastPage>
   );
 }
 
@@ -36,7 +37,7 @@ function PodcastScreen({ navigation, route }) {
 function LibraryScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Library</Text>
+        <Text>Temporary Library Text</Text>
     </View>
   );
 }
@@ -46,7 +47,7 @@ function LibraryScreen({ navigation }) {
 function SettingsScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Settings</Text>
+        <Text>Temporary Settings Text</Text>
     </View>
   );
 }
