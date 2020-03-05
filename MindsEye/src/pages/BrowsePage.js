@@ -34,6 +34,7 @@ export class BrowsePage extends Component {
       } else {
         global.podcastIndex = index;
       }
+
       navigation.navigate('Podcast', {
         url: global.Podcasts.urls[index],      //Podcast Link
         uri: global.Podcasts.uris[index],      //Image Link

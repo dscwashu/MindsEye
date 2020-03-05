@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import { View, Button, StyleSheet, ScrollView } from 'react-native';
+import { View, Button, StyleSheet, ScrollView, Text } from 'react-native';
 
 // Our built buttons
 import { Podcast } from '../components/Podcast';
 import { LowButtons } from '../components/LowerButtons';
+import { NavTab } from '../components/NavTab';
 
 import '../global/constants';
 
@@ -13,15 +14,24 @@ export class LibraryPage extends Component {
   render(){
 
     var tabElements = [];
-
-    this.props.Object.map((a,index) => {
-      if(index != 0){
+    var index = 0;
+    if(this.props.Obj.titles == null){
+      for(const tab in this.props.Obj){
         tabElements.push(
-            
+            <NavTab key={index} title={tab} Obj={this.props.Obj[tab]} navigation={this.props.navigation}></NavTab>
         );
-      }
-    });
-
+        index++;
+      };
+    } else {
+      tabElements.push(
+        <Text key="1" style={{
+          fontSize: 60,
+          textAlign: "center"
+         }
+        }>List of Potential Listening Podcasts!</Text> 
+      )
+    }
+    
     
     function selectPodcast(index, navigation){
       console.log(index);

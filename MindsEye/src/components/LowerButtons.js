@@ -28,10 +28,10 @@ import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
                  accessible={true} accessibilityLabel={"Library"} accessibilityHint={"Navigate to Library"}>
                     <Text style={styles.text}>Library</Text>
                  </TouchableOpacity>
-                 <TouchableOpacity onPress={this.props.settingsOnPress} style={styles.title}
+                 {/* <TouchableOpacity onPress={this.props.settingsOnPress} style={styles.title}
                  accessible={true} accessibilityLabel={"Settings"} accessibilityHint={"Navigate to Settings"}>
                     <Text style={styles.text}>Settings</Text>
-                 </TouchableOpacity>
+                 </TouchableOpacity> */}
              </View>
          );
      }

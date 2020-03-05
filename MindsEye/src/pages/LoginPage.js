@@ -27,6 +27,7 @@ export class LoginPage extends Component {
                 placeholder="Username"
                 leftIcon={
                     <Icon
+                    accessible={true} accessibilityLabel={"Username Icon"}
                     style={{marginRight: 10}}
                     name='user'
                     size={24}
@@ -44,6 +45,7 @@ export class LoginPage extends Component {
                 placeholder="Password"
                 leftIcon={
                     <Icon
+                    accessible={true} accessibilityLabel={"Password Icon"}
                     style={{marginRight: 10}}
                     name='lock'
                     size={24}
@@ -54,21 +56,22 @@ export class LoginPage extends Component {
                 secureTextEntry={true}
                 />
                 <View style={{flexDirection: "row", justifyContent: "space-around", width: "80%", height: 75}}>
-                    <TouchableOpacity style={{width: 150, height: 75, alignItems: "center", justifyContent: "center", backgroundColor: "lightblue", borderColor: "gray", borderWidth: 0.5}} onPress={() => this.props.navigation.navigate('Browse')}
+                    <TouchableOpacity style={{width: 300, height: 75, alignItems: "center", justifyContent: "center", backgroundColor: "lightblue", borderColor: "gray", borderWidth: 0.5}} onPress={() => this.props.navigation.navigate('Browse')}
                     accessible={true} accessibilityLabel={"Log In Button"} accessibilityHint={"Click to Login"}>
                         <Text style={{fontSize: 36, }}>Log In</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={{width: 150, height: 75, alignItems: "center", justifyContent: "center", backgroundColor: "lightblue", borderColor: "gray", borderWidth: 0.5}} onPress={() => this.props.navigation.navigate('SignUp')}
-                        accessible={true} accessibilityLabel={"Sign-up"} accessibilityHint={"Click to Navigate to Signup"}>
-                        <Text style={{fontSize: 36, }}>SignUp</Text>
-                    </TouchableOpacity>
                     </View>
 
-                    <TouchableOpacity style={{width: 150, marginTop: 20, height: 75, alignItems: "center", justifyContent: "center", backgroundColor: "lightblue", borderColor: "gray", borderWidth: 0.5}} onPress={() => this.props.navigation.navigate('Browse')}
+                    <TouchableOpacity style={{width: 300, height: 75, alignItems: "center", justifyContent: "center", backgroundColor: "lightblue", borderColor: "gray", borderWidth: 0.5, marginTop: 20}} onPress={() => this.props.navigation.navigate('SignUp')}
+                        accessible={true} accessibilityLabel={"Sign-up Instead"} accessibilityHint={"Click to Navigate to Signup"}>
+                        <Text style={{fontSize: 36, }}>SignUp</Text>
+                    </TouchableOpacity>
+                    
+                    {/* <TouchableOpacity style={{width: 150, marginTop: 20, height: 75, alignItems: "center", justifyContent: "center", backgroundColor: "lightblue", borderColor: "gray", borderWidth: 0.5}} onPress={() => this.props.navigation.navigate('Browse')}
                         accessible={true} accessibilityLabel={"Guest"} accessibilityHint={"Click to Login as Guest"}>
                         <Text style={{fontSize: 36, }}>Guest</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
             </View>
         );
     }

@@ -15,23 +15,23 @@ import { BrowsePage } from './src/pages/BrowsePage';
 import { PodcastPage } from './src/pages/PodcastPage';
 import { LibraryPage } from './src/pages/LibraryPage';
 
-function selectPodcast(index, navigation){
-  console.log(index);
-  if(index == 0){
-    index = 0
-  } else if(index == null){
-    index = global.podcastIndex;
-  } else {
-    global.podcastIndex = index;
-  }
-  navigation.navigate('Podcast', {
-    url: global.Podcasts.urls[index],      //Podcast Link
-    uri: global.Podcasts.uris[index],      //Image Link
-    title: global.Podcasts.titles[index],  //Title of podcast
-    author: global.Podcasts.authors[index] //Author
-    }
-  );
-}
+// function selectPodcast(index, navigation){
+//   console.log(index);
+//   if(index == 0){
+//     index = 0
+//   } else if(index == null){
+//     index = global.podcastIndex;
+//   } else {
+//     global.podcastIndex = index;
+//   }
+//   navigation.navigate('Podcast', {
+//     url: global.Podcasts.urls[index],      //Podcast Link
+//     uri: global.Podcasts.uris[index],      //Image Link
+//     title: global.Podcasts.titles[index],  //Title of podcast
+//     author: global.Podcasts.authors[index] //Author
+//     }
+//   );
+// }
 
 // Login and Signups
 function LoginScreen({ navigation }) {
@@ -53,42 +53,22 @@ function BrowseScreen({ navigation }) {
   );
 }
 
-function LibraryScreen({ navigation }) {
+function LibraryScreen({ navigation, route }) {
+  var callObj;
+  console.log(route.params);
+  if(route.params != null){
+    callObj = route.params.nextObj;
+  } else {
+    callObj = global.Library;
+  }
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <ScrollView style={styles.scroll}>
-            <Text style={styles.tempText}>Temporary Library Screen</Text>
-          </ScrollView>
-          <View>
-            <LowButtons 
-              livestreamOnPress={() => navigation.navigate('Browse')}
-              browseOnPress={() => navigation.navigate('Podcast', selectPodcast(0, navigation))}
-              searchOnPress={() => navigation.navigate('Podcast', selectPodcast(null, navigation))}
-              libraryOnPress={() => navigation.navigate('Library')}
-              settingsOnPress={() => navigation.navigate('Settings')}
-            />
-          </View>
-      </View>
-    // <LibraryPage navigation={navigation}></LibraryPage>
+    <LibraryPage navigation={navigation} Obj={callObj}></LibraryPage>
   );
 }
 
 function SettingsScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <ScrollView style={styles.scroll}>
-            <Text style={styles.tempText}>Temporary Settings Screen</Text>
-          </ScrollView>
-          <View>
-            <LowButtons 
-              livestreamOnPress={() => navigation.navigate('Browse')}
-              browseOnPress={() => navigation.navigate('Podcast', selectPodcast(0, navigation))}
-              searchOnPress={() => navigation.navigate('Podcast', selectPodcast(null, navigation))}
-              libraryOnPress={() => navigation.navigate('Library')}
-              settingsOnPress={() => navigation.navigate('Settings')}
-            />
-          </View>
-      </View>
+    <LibraryPage navigation={navigation}></LibraryPage>
   );
 }
 

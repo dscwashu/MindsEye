@@ -41,13 +41,13 @@ global.Podcasts = {
 }
 
 global.Library = {
-    favorites: {
+    "Favorites": {
         titles: [],
         authors: [],
         urls: [],
         uris: []
     },
-    onlineOnly: {
+    "Online": {
         comicBooks: {
             titles: [],
             authors: [],
@@ -61,13 +61,13 @@ global.Library = {
             uris: []
         }
     },
-    bookWorm: {
+    "Book Worm": {
         titles: [],
         authors: [],
         urls: [],
         uris: []
     },
-    DaisyPrograms:{
+    "Daisy Programs":{
         titles: [],
         authors: [],
         urls: [],
@@ -79,5 +79,5 @@ global.Library = {
 
 global.isPlaying = false;
 global.midIcon = "play-circle";
-global.podcastIndex = 0;
+global.podcastIndex = 1;
 global.playbackObject = new Audio.Sound();
